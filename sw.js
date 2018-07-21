@@ -10,5 +10,6 @@ self.addEventListener('activate', function(event) {
 
 self.addEventListener('fetch', function(event) {
   console.log('[Service Worker] Fetching something ....', event);
+  if (e.request.cache === 'only-if-cached' && e.request.mode !== 'same-origin') return;
   event.respondWith(fetch(event.request));
 });
