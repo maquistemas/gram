@@ -24,7 +24,7 @@ self.addEventListener('fetch', e => {
                     return res;
                 }
 				
-				console.log('[Service Worker] Fetching something ....', event);
+				console.log('[Service Worker] Fetching something ....', e);
 				
                 return fetch(e.request);
             })
