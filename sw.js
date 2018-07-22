@@ -14,6 +14,13 @@ self.addEventListener('activate', function(event) {
   event.respondWith(fetch(event.request));
 });*/
 
+self.addEventListener('fetch', event => {
+  console.log('[Service Worker] Fetching something ....', event);
+  
+  event.respondWith(fetch(event.request));
+});
+
+/*
 self.addEventListener('fetch', e => {
     e.respondWith(
         caches.match(e.request)
@@ -30,3 +37,4 @@ self.addEventListener('fetch', e => {
             })
     );
 });
+*/
