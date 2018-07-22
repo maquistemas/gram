@@ -48,6 +48,7 @@ self.addEventListener('fetch', function(event) {
     caches.match(event.request)
       .then(function(response) {
         if (response) {
+          console.log('>>>fetch response: ', response);
           return response;
         } else {
           return fetch(event.request)
@@ -55,6 +56,7 @@ self.addEventListener('fetch', function(event) {
               return caches.open(CACHE_DYNAMIC_NAME)
                 .then(function(cache) {
                   cache.put(event.request.url, res.clone());
+                  console.log('>>>fetch res: ', res);
                   return res;
                 })
             })
