@@ -55,7 +55,6 @@ self.addEventListener('fetch', function(event) {
               return caches.open(CACHE_DYNAMIC_NAME)
                 .then(function(cache) {
                   cache.put(event.request.url, res.clone());
-                  console.log('>>>fetch res: ', res);
                   return res;
                 })
             })
