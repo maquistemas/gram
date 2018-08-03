@@ -30,13 +30,12 @@ shareImageButton.addEventListener('click', openCreatePostModal);
 
 closeCreatePostModalButton.addEventListener('click', closeCreatePostModal);
 
-
 function createCard() {
   var cardWrapper = document.createElement('div');
   cardWrapper.className = 'shared-moment-card mdl-card mdl-shadow--2dp';
   var cardTitle = document.createElement('div');
   cardTitle.className = 'mdl-card__title';
-  cardTitle.style.backgroundImage = 'url("src/images/sf-boat.jpg")';
+  cardTitle.style.backgroundImage = 'url("/src/images/sf-boat.jpg")';
   cardTitle.style.backgroundSize = 'cover';
   cardTitle.style.height = '180px';
   cardWrapper.appendChild(cardTitle);
@@ -61,4 +60,3 @@ fetch('https://httpbin.org/get')
   .then(function(data) {
     createCard();
   });
-
